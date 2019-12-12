@@ -4,16 +4,14 @@ function getItems() {
   return fetch(`${BASE_URL}/items`);
 }
 
-function createItems(name) {
+function createItem(name) {
   // Properties of the new item
-  let newItem = {name: name};
-  // convert javascript object to json object
-  JSON.stringify(newItem);
+  let newItem = JSON.stringify({name});
   // fetch the api to create a new item
-  fetch(`${BASE_URL}/items`, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: newItem});
+  return fetch(`${BASE_URL}/items`, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: newItem});
 }
 
 export default {
   getItems,
-  createItems
+  createItem
 };
