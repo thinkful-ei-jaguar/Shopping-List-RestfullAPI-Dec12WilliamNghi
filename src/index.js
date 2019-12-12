@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import api from './api';
 
 import 'normalize.css';
 import './index.css';
